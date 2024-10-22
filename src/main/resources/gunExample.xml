@@ -1,0 +1,12 @@
+<Gun id="g1">
+    <Model>AK-47</Model>
+    <Handy>two-handed</Handy>
+    <Origin>Russia</Origin>
+    <TTC>
+        <Range>long</Range>
+        <SightingRange>800</SightingRange>
+        <Magazine>true</Magazine>
+        <Optics>false</Optics>
+    </TTC>
+    <Material>Steel</Material>
+</Gun>

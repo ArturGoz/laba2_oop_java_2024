@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GroupedGuns>
+    <Group>
+        <Origin>Russia</Origin>
+        <GunsByOrigin>
+            <Gun>
+                <Model>AK-47</Model>
+                <Handy>two-handed</Handy>
+                <Material>Steel</Material>
+                <TTC>
+                    <Range>long</Range>
+                    <SightingRange>800</SightingRange>
+                    <Magazine>true</Magazine>
+                    <Optics>false</Optics>
+                </TTC>
+            </Gun>
+        </GunsByOrigin>
+    </Group>
+    <Group>
+        <Origin>USA</Origin>
+        <GunsByOrigin>
+            <Gun>
+                <Model>M16</Model>
+                <Handy>two-handed</Handy>
+                <Material>Aluminum</Material>
+                <TTC>
+                    <Range>long</Range>
+                    <SightingRange>900</SightingRange>
+                    <Magazine>true</Magazine>
+                    <Optics>true</Optics>
+                </TTC>
+            </Gun>
+        </GunsByOrigin>
+    </Group>
+    <Group>
+        <Origin>Austria</Origin>
+        <GunsByOrigin>
+            <Gun>
+                <Model>Glock 17</Model>
+                <Handy>one-handed</Handy>
+                <Material>Polymer</Material>
+                <TTC>
+                    <Range>short</Range>
+                    <SightingRange>50</SightingRange>
+                    <Magazine>true</Magazine>
+                    <Optics>false</Optics>
+                </TTC>
+            </Gun>
+        </GunsByOrigin>
+    </Group>
+</GroupedGuns>

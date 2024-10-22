@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Guns>
-    <Gun id="1">
+    <Gun id="g1">
         <Model>AK-47</Model>
         <Handy>two-handed</Handy>
         <Origin>Russia</Origin>
@@ -12,7 +12,7 @@
         </TTC>
         <Material>Steel</Material>
     </Gun>
-    <Gun id="2">
+    <Gun id="g2">
         <Model>M16</Model>
         <Handy>two-handed</Handy>
         <Origin>USA</Origin>
@@ -24,7 +24,7 @@
         </TTC>
         <Material>Aluminum</Material>
     </Gun>
-    <Gun id="3">
+    <Gun id="g3">
         <Model>Glock 17</Model>
         <Handy>one-handed</Handy>
         <Origin>Austria</Origin>
