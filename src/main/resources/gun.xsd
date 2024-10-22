@@ -1,25 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="Gun">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Model" type="xs:string" />
-                <xs:element name="Handy" type="xs:string" />
-                <xs:element name="Origin" type="xs:string" />
-                <xs:element name="TTC">
+                <xs:element name="Model" type="xs:string"/>
+                <xs:element name="Handy" type="xs:string"/>
+                <xs:element name="Origin" type="xs:string"/>
+                <xs:element name="TTC" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Range" type="xs:string" />
-                            <xs:element name="SightingRange" type="xs:unsignedShort" />
-                            <xs:element name="Magazine" type="xs:boolean" />
-                            <xs:element name="Optics" type="xs:boolean" />
+                            <xs:element name="Range">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Close"/>
+                                        <xs:enumeration value="Medium"/>
+                                        <xs:enumeration value="Long"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="SightingRange" type="xs:integer"/>
+                            <xs:element name="Magazine" type="xs:boolean"/>
+                            <xs:element name="Optics" type="xs:boolean"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Material" type="xs:string" />
+                <xs:element name="Material" type="xs:string"/>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:string" use="required" />
+            <xs:attribute name="id" type="xs:ID" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
