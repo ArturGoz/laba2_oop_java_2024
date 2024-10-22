@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "material"
 })
 @XmlRootElement(name = "Gun")
-public class Gun {
+public class Gun implements Comparable<Gun> {
 
     @XmlElement(name = "Model", required = true)
     protected String model;
@@ -101,6 +101,11 @@ public class Gun {
 
     public void setId(String value) {
         this.id = value;
+    }
+
+    @Override
+    public int compareTo(Gun gun) {
+        return this.model.compareTo(gun.model);
     }
 
 
