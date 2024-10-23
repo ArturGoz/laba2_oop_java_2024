@@ -1,6 +1,8 @@
 package artur.goz.xmlParsers;
 
 import artur.goz.generated.Gun;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
@@ -9,10 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DOMParserExample {
+    private static final Logger logger = LoggerFactory.getLogger(DOMParserExample.class);
 
     public static List<Gun> parseXML(String xmlFilePath) {
         List<Gun> guns = new ArrayList<>();
         try {
+            logger.info("DOM парсинг розпочався");
             // Ініціалізуємо DocumentBuilderFactory
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -48,8 +52,9 @@ public class DOMParserExample {
                     guns.add(gun);
                 }
             }
+            logger.info("DOM парсинг закінчився успішно");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("DOM парсинг закінчився з помилкою: {}", e.getMessage());
         }
         return guns;
     }

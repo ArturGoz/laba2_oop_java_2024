@@ -1,6 +1,9 @@
 package artur.goz.xmlParsers;
 
+import artur.goz.XMLValidator;
 import artur.goz.generated.Gun;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SAXParserExample extends DefaultHandler {
-
+    private static final Logger logger = LoggerFactory.getLogger(SAXParserExample.class);
     private List<Gun> guns = new ArrayList<>();
     private Gun gun;
     private Gun.TTC ttc;
@@ -21,10 +24,13 @@ public class SAXParserExample extends DefaultHandler {
 
     public List<Gun> parseXML(String xmlFilePath) {
         try {
+            logger.info("SAX парсинг розпочався");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(new File(xmlFilePath), this);
+            logger.info("SAX парсинг закінчився успішно");
         } catch (Exception e) {
+            logger.error("SAX парсинг закінчився з помилкою: {}", e.getMessage());
             e.printStackTrace();
         }
         return guns;

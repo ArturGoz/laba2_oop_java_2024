@@ -1,6 +1,8 @@
 package artur.goz.xmlParsers;
 
 import artur.goz.generated.Gun;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StAXParserExample {
-
+    private static final Logger logger = LoggerFactory.getLogger(StAXParserExample.class);
     public static List<Gun> parseXML(String xmlFilePath) {
         List<Gun> guns = new ArrayList<>();
         Gun gun = null;
@@ -19,6 +21,7 @@ public class StAXParserExample {
         String content = null;
 
         try {
+            logger.info("StAX парсинг розпочався");
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLEventReader eventReader = factory.createXMLEventReader(new FileInputStream(xmlFilePath));
 
@@ -72,8 +75,9 @@ public class StAXParserExample {
                     }
                 }
             }
+            logger.info("StAX парсинг закінчився успішно");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("StAX парсинг закінчився з помилкою: {}", e.getMessage());
         }
         return guns;
     }

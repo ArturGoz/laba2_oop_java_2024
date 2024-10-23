@@ -10,6 +10,6 @@ import static artur.goz.xmlParsers.StAXParserExample.parseXML;
 public class Main {
 
     public static void main(String[] args) {
-
+        //transformXML();
     }
 }
