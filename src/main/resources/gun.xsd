@@ -1,23 +1,29 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Gun">
+    <xs:element name="Guns">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Model" type="xs:string"/>
-                <xs:element name="Handy" type="xs:string"/>
-                <xs:element name="Origin" type="xs:string"/>
-                <xs:element name="TTC" maxOccurs="unbounded">
+                <xs:element name="Gun" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Range" type="xs:string"/>
-                            <xs:element name="SightingRange" type="xs:integer"/>
-                            <xs:element name="Magazine" type="xs:boolean"/>
-                            <xs:element name="Optics" type="xs:boolean"/>
+                            <xs:element name="Model" type="xs:string"/>
+                            <xs:element name="Handy" type="xs:string"/>
+                            <xs:element name="Origin" type="xs:string"/>
+                            <xs:element name="TTC">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Range" type="xs:string"/>
+                                        <xs:element name="SightingRange" type="xs:integer"/>
+                                        <xs:element name="Magazine" type="xs:boolean"/>
+                                        <xs:element name="Optics" type="xs:boolean"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Material" type="xs:string"/>
                         </xs:sequence>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Material" type="xs:string"/>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:ID" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

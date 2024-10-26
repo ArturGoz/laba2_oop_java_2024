@@ -9,7 +9,7 @@ public class XMLValidatorTest {
     @Test
     public void exampleValidationTest(){
         String xsdPath = "src/main/resources/gun.xsd"; // шлях до вашого XSD-файлу
-        String xmlPath = "src/main/resources/gunExample.xml"; // шлях до вашого XML-файлу
+        String xmlPath = "src/main/resources/gunsToParse.xml"; // шлях до вашого XML-файлу
 
         assertTrue(validateXMLSchema(xsdPath, xmlPath));
     }
