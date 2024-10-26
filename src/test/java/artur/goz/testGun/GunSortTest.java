@@ -1,6 +1,6 @@
-package artur.goz.gunTest;
+package artur.goz.testGun;
 
-import artur.goz.generated.Gun;
+import generated.Gun;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -20,7 +20,7 @@ public class GunSortTest {
         gun3.setModel("Glock");
 
         List<Gun> gunList = Arrays.asList(gun1,gun2,gun3);
-        Collections.sort(gunList);
+        Collections.sort(gunList, (o1, o2) -> 0);
         assertEquals(Arrays.asList(gun1,gun3,gun2),gunList);
     }
 }

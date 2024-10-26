@@ -1,4 +1,4 @@
-package artur.goz;
+package artur.goz.Utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 package artur.goz.xmlParsers;
 
-import artur.goz.XMLValidator;
-import artur.goz.generated.Gun;
+import artur.goz.Utils.GunService;
+import generated.Gun;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
@@ -33,7 +33,7 @@ public class SAXParserExample extends DefaultHandler {
             logger.error("SAX парсинг закінчився з помилкою: {}", e.getMessage());
             e.printStackTrace();
         }
-        return guns;
+        return GunService.sortGuns(guns);
     }
 
     @Override

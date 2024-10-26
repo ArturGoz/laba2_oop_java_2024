@@ -1,6 +1,7 @@
 package artur.goz.xmlParsers;
 
-import artur.goz.generated.Gun;
+import artur.goz.Utils.GunService;
+import generated.Gun;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,7 +80,7 @@ public class StAXParserExample {
         } catch (Exception e) {
             logger.error("StAX парсинг закінчився з помилкою: {}", e.getMessage());
         }
-        return guns;
+        return GunService.sortGuns(guns);
     }
 }
 

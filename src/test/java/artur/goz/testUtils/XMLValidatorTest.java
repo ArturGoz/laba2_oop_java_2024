@@ -1,8 +1,8 @@
-package artur.goz;
+package artur.goz.testUtils;
 
 import org.junit.Test;
 
-import static artur.goz.XMLValidator.validateXMLSchema;
+import static artur.goz.Utils.XMLValidator.validateXMLSchema;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class XMLValidatorTest {

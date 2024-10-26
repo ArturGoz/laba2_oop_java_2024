@@ -1,6 +1,9 @@
-package artur.goz.xmlParsers;
+package artur.goz.testXmlParsers;
 
-import artur.goz.generated.Gun;
+import artur.goz.xmlParsers.DOMParserExample;
+import artur.goz.xmlParsers.SAXParserExample;
+import artur.goz.xmlParsers.StAXParserExample;
+import generated.Gun;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,6 +17,8 @@ public class ParserTests {
     List<Gun> guns;
     String path = "src/main/resources/gunsToParse.xml";
     List<String> list;
+    //sorted array
+    String[] listOfModels = {"AK-47","Glock 17","M16"};
 
     public void fillListWithGuns(){
         list = new ArrayList<>();
@@ -24,19 +29,19 @@ public class ParserTests {
     public void domParserTest(){
         guns = DOMParserExample.parseXML(path);
         fillListWithGuns();
-        assertEquals(Arrays.asList("AK-47","M16","Glock 17"),list);
+        assertEquals(Arrays.asList(listOfModels),list);
     }
     @Test
     public void saxParserTest(){
         SAXParserExample saxParserExample = new SAXParserExample();
         guns = saxParserExample.parseXML(path);
         fillListWithGuns();
-        assertEquals(Arrays.asList("AK-47","M16","Glock 17"),list);
+        assertEquals(Arrays.asList(listOfModels),list);
     }
     @Test
     public void staxParserTest(){
         guns = StAXParserExample.parseXML(path);
         fillListWithGuns();
-        assertEquals(Arrays.asList("AK-47","M16","Glock 17"),list);
+        assertEquals(Arrays.asList(listOfModels),list);
     }
 }
